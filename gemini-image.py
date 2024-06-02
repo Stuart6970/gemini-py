@@ -1,9 +1,10 @@
+import os
 import PIL.Image
 import google.generativeai as genai
 
 def main():
-    api_key = "AIzaSyDcv5ZHqOhMG1dkn1Gi7spNIiEHGVCEv08"
-    genai.configure(api_key=api_key)
+    # Get the API key from environment variable
+    genai.configure(api_key=os.environ["GEMINI_API_KEY"])
     
     img = PIL.Image.open('food.jpg')
 
